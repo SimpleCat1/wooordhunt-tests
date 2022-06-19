@@ -2,6 +2,7 @@ package com.simbirsoft.Page;
 
 import com.codeborne.selenide.SelenideElement;
 import com.simbirsoft.data.TestData;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -28,16 +29,28 @@ public class PageWooordhunt {
     private SelenideElement logout = $("a[href='/user/prelogout']");
     private SelenideElement logoutButton = $(".base_button.green_button");
 
+    @Step("Наводит на элемент {locator} и вводим текст {value}")
     private void insertTextInArea(SelenideElement locator, String value) {
         locator.setValue(value);
     }
-
+    @Step("Нажимаем на элемент {locator}")
+    private void clickOnElement(SelenideElement locator) {
+        locator.click();
+    }
+    @Step("Наводит на элемент {locator} и проверяем наличие текста {text}")
+    public void checkText(SelenideElement locator, String text){
+        assertText(locator, text);
+    }
+    //нужно было добавить step, так как он тут вставлял секретный пароль и логин и указывал в отчете allure ,
+    // а так не указывает.Ну и еще сделал его отедльно,чтобы другие элементы попадали в отчет allure
+    @Step("Логин")
     public void insertTextInEmail(String value) {
-        insertTextInArea(inputEmail, value);
+        inputEmail.setValue(value);
     }
 
+    @Step("Пароль")
     public void insertTextInPassword(String value) {
-        insertTextInArea(inputPassword, value);
+        inputPassword.setValue(value);
     }
 
     public void insertTextInSearch() {
@@ -50,72 +63,70 @@ public class PageWooordhunt {
             insertTextInArea(searchWords, text);
             clickOnSearchButton();
         }
-
     }
 
     public void clickOnCheckboxRememberMe() {
-        checkboxRememberMe.click();
+        clickOnElement(checkboxRememberMe);
     }
 
     public void clickOnPersonalAccount() {
-        personalAccount.click();
+        clickOnElement(personalAccount);
     }
 
     public void clickOnLogout() {
-        logout.click();
+        clickOnElement(logout);
     }
 
     public void clickOnLogoutButton() {
-        logoutButton.click();
+        clickOnElement(logoutButton);
     }
 
     public void clickOnLogInToTheSite() {
-        logInToTheSite.click();
+        clickOnElement(logInToTheSite);
     }
 
     public void clickOnButtonEnter() {
-        buttonEnter.click();
+        clickOnElement(buttonEnter);
     }
 
     public void clickOnTheSupport() {
-        theSupport.click();
+        clickOnElement(theSupport);
     }
 
     public void clickOnSearchButton() {
-        searchButton.click();
+        clickOnElement(searchButton);
     }
 
     public void clickOnHomeTab() {
-        homeTab.click();
+        clickOnElement(homeTab);
     }
 
     private void assertText(SelenideElement locator, String text) {
         locator.shouldHave(text(text));
     }
-
     public void assertTextOneBlockAfterAuthorization() {
-        assertText(textAreaOneAfterAuthorization, testData.textAreaOneAuthorization);
+        checkText(textAreaOneAfterAuthorization, testData.textAreaOneAuthorization);
     }
 
     public void assertTextTwoBlockAfterAuthorization() {
-        assertText(textAreaTwoAfterAuthorization, testData.textAreaTwoAuthorization);
+        checkText(textAreaTwoAfterAuthorization, testData.textAreaTwoAuthorization);
     }
 
     public void assertTextOneBlockTheSupportPage() {
-        assertText(theSupportHeader, testData.textAreaHeaderSupport);
+        checkText(theSupportHeader, testData.textAreaHeaderSupport);
     }
 
     public void assertTextInHistory() {
-        assertText($(String.format(theSearchWord, testData.textTheSearchWord)), testData.textTheSearchWord);
+        checkText($(String.format(theSearchWord, testData.textTheSearchWord)), testData.textTheSearchWord);
     }
 
     public void assertTextsInHistory() {
         for (String text : testData.textTheSearchTwoWord) {
-            assertText($(String.format(theSearchWord, text)), text);
+            checkText($(String.format(theSearchWord, text)), text);
         }
     }
 
     public void assertTextInFirstElementListArea() {
-        assertText($x(String.format(listArea, testData.textTheSearchWord)), testData.textTheSearchWord);
+        checkText($x(String.format(listArea, testData.textTheSearchWord)), testData.textTheSearchWord);
     }
 }
