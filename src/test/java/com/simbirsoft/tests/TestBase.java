@@ -7,37 +7,38 @@ import com.simbirsoft.helper.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 
 public class TestBase {
     public static CredentialsConfig credentials =
             ConfigFactory.create(CredentialsConfig.class);
+
     @BeforeEach
     public void helperDriver() {
-        Configuration.browser = "Firefox";
+//        Configuration.browser = "Firefox";
 
         Configuration.startMaximized = true;
 
-//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-//
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("enableVNC", true);
-//        capabilities.setCapability("enableVideo", true);
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-//        Configuration.browserCapabilities = capabilities;
-//        Configuration.remote = format("https://%s:%s@selenoid.autotests.cloud/wd/hub/",
-//                credentials.login(),
-//                credentials.password());
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+
+        Configuration.browserCapabilities = capabilities;
+        Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub/",
+                credentials.login1(),
+                credentials.password1());
     }
 
 
-//    @AfterEach
-//    public void tearDown() {
-//        Attach.screenshotAs("Last screenshot");
-//        Attach.pageSource();
-//        Attach.browserConsoleLogs();
-//        Attach.addVideo();
-//    }
+    @AfterEach
+    public void tearDown() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
+    }
 }
