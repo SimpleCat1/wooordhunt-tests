@@ -1,5 +1,6 @@
 package com.simbirsoft.data;
 
+import com.github.javafaker.Faker;
 import com.simbirsoft.config.CredentialsConfig;
 import org.aeonbits.owner.ConfigFactory;
 
@@ -16,6 +17,9 @@ public class TestData {
             "Мы старались сделать всё максимально удобно, но возможно, вам потребуется некоторое время для того," +
             " чтобы здесь освоиться. Мы уверены, что у вас всё получится, но если у вас останутся какие-то вопросы" +
             " или появятся предложения, то смело пишите нам на info@wooordhunt.ru";
+    public String textAreaHeaderSupport = "Справочная информация";
+    public String textTheSearchWord = new Faker().animal().name();
+    public String[] textTheSearchTwoWord = new String[]{  new Faker().animal().name(),  new Faker().animal().name()};
     public String gender = "Male";
     public String birthday = "4 April,2022";
     public int monthText = 3;

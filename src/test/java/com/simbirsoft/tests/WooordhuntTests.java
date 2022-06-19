@@ -4,9 +4,10 @@ import com.simbirsoft.Page.PageWooordhunt;
 import com.simbirsoft.data.TestData;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.ResourceLock;
 
 import static com.codeborne.selenide.Selenide.open;
-import static com.simbirsoft.Page.components.CalendarComponents.useCalendar;
+//import static com.simbirsoft.Page.components.CalendarComponents.useCalendar;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -26,6 +27,63 @@ public class WooordhuntTests extends TestBase {
         page.clickOnButtonEnter();
         page.assertTextOneBlockAfterAuthorization();
         page.assertTextTwoBlockAfterAuthorization();
+    }
+    @Tag("properties")
+    @Test
+    public void theHelpOnTheMainPageIsWorking() {
+        open(pageData.urlSite);
+        page.clickOnPersonalAccount();
+        page.clickOnLogInToTheSite();
+        page.insertTextInEmail(pageData.login);
+        page.insertTextInPassword(pageData.password);
+        page.clickOnCheckboxRememberMe();
+        page.clickOnButtonEnter();
+        page.clickOnTheSupport();
+        page.assertTextOneBlockTheSupportPage();
+    }
+    @Tag("properties")
+    @Test
+    public void theWordSearchListAreaAppears() {
+        open(pageData.urlSite);
+        page.clickOnPersonalAccount();
+        page.clickOnLogInToTheSite();
+        page.insertTextInEmail(pageData.login);
+        page.insertTextInPassword(pageData.password);
+        page.clickOnCheckboxRememberMe();
+        page.clickOnButtonEnter();
+        page.insertTextInSearch();
+        page.assertTextInFirstElementListArea();
+    }
+    @ResourceLock("SelenideConfig")
+    @Tag("properties")
+    @Test
+    public void theWordSearchHistoryAppears() {
+        open(pageData.urlSite);
+        page.clickOnPersonalAccount();
+        page.clickOnLogInToTheSite();
+        page.insertTextInEmail(pageData.login);
+        page.insertTextInPassword(pageData.password);
+        page.clickOnCheckboxRememberMe();
+        page.clickOnButtonEnter();
+        page.insertTextInSearch();
+        page.clickOnSearchButton();
+        page.clickOnHomeTab();
+        page.assertTextInHistory();
+    }
+    @ResourceLock("SelenideConfig")
+    @Tag("properties")
+    @Test
+    public void theWordsSearchHistoryAppears() {
+        open(pageData.urlSite);
+        page.clickOnPersonalAccount();
+        page.clickOnLogInToTheSite();
+        page.insertTextInEmail(pageData.login);
+        page.insertTextInPassword(pageData.password);
+        page.clickOnCheckboxRememberMe();
+        page.clickOnButtonEnter();
+        page.insertTwoTextInSearch();
+        page.clickOnHomeTab();
+        page.assertTextsInHistory();
     }
 
 }
