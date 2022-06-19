@@ -28,6 +28,8 @@ public class PageWooordhunt {
     private SelenideElement homeTab = $x("//div[@id='menu']//a[@href='/' and text()='Главная']");
     private String theSearchWord = "#word_history_box a[href='/word/%s']";
     private String listArea = "//div/span[text()='%s']";
+    private SelenideElement logout = $("a[href='/user/prelogout']");
+    private SelenideElement logoutButton = $(".base_button.green_button");
     private SelenideElement subjectSelection = $("#react-select-2-option-0");
     private SelenideElement hobbiesCheckbox = $("label.custom-control-label[for='hobbies-checkbox-1']");
     private SelenideElement downloadScreen = $("#uploadPicture");
@@ -83,6 +85,12 @@ public class PageWooordhunt {
     }
     public void clickOnPersonalAccount() {
         personalAccount.click();
+    }
+    public void clickOnLogout() {
+        logout.click();
+    }
+    public void clickOnLogoutButton() {
+        logoutButton.click();
     }
     public void clickOnLogInToTheSite() {
         logInToTheSite.click();

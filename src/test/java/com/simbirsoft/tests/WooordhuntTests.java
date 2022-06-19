@@ -4,6 +4,7 @@ import com.simbirsoft.Page.PageWooordhunt;
 import com.simbirsoft.data.TestData;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.ResourceLock;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -27,6 +28,9 @@ public class WooordhuntTests extends TestBase {
         page.clickOnButtonEnter();
         page.assertTextOneBlockAfterAuthorization();
         page.assertTextTwoBlockAfterAuthorization();
+        page.clickOnPersonalAccount();
+        page.clickOnLogout();
+        page.clickOnLogoutButton();
     }
     @Tag("properties")
     @Test
@@ -40,6 +44,10 @@ public class WooordhuntTests extends TestBase {
         page.clickOnButtonEnter();
         page.clickOnTheSupport();
         page.assertTextOneBlockTheSupportPage();
+
+        page.clickOnPersonalAccount();
+        page.clickOnLogout();
+        page.clickOnLogoutButton();
     }
     @Tag("properties")
     @Test
@@ -53,6 +61,10 @@ public class WooordhuntTests extends TestBase {
         page.clickOnButtonEnter();
         page.insertTextInSearch();
         page.assertTextInFirstElementListArea();
+
+        page.clickOnPersonalAccount();
+        page.clickOnLogout();
+        page.clickOnLogoutButton();
     }
     @ResourceLock("SelenideConfig")
     @Tag("properties")
@@ -69,6 +81,10 @@ public class WooordhuntTests extends TestBase {
         page.clickOnSearchButton();
         page.clickOnHomeTab();
         page.assertTextInHistory();
+
+        page.clickOnPersonalAccount();
+        page.clickOnLogout();
+        page.clickOnLogoutButton();
     }
     @ResourceLock("SelenideConfig")
     @Tag("properties")
@@ -84,6 +100,10 @@ public class WooordhuntTests extends TestBase {
         page.insertTwoTextInSearch();
         page.clickOnHomeTab();
         page.assertTextsInHistory();
+
+        page.clickOnPersonalAccount();
+        page.clickOnLogout();
+        page.clickOnLogoutButton();
     }
 
 }

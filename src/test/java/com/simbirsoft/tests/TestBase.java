@@ -8,13 +8,14 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
     public static CredentialsConfig credentials =
             ConfigFactory.create(CredentialsConfig.class);
-    @BeforeAll
-    public static void helperDriver() {
+    @BeforeEach
+    public void helperDriver() {
         Configuration.browser = "Firefox";
 
         Configuration.startMaximized = true;
@@ -30,6 +31,7 @@ public class TestBase {
 //                credentials.login(),
 //                credentials.password());
     }
+
 
 //    @AfterEach
 //    public void tearDown() {
