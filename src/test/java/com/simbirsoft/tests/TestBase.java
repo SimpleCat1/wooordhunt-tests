@@ -22,16 +22,17 @@ public class TestBase {
 
         Configuration.startMaximized = true;
 
-//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-//
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("enableVNC", true);
-//        capabilities.setCapability("enableVideo", true);
-//
-//        Configuration.browserCapabilities = capabilities;
-//        Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub/",
-//                credentials.login1(),
-//                credentials.password1());
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+
+        Configuration.browserCapabilities = capabilities;
+        Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub/",
+                credentials.login1(),
+                credentials.password1());
     }
 
 
