@@ -41,4 +41,3 @@ target/
 *.properties
 /duild/
 /settings.gradle
-!/junit-platform.properties
