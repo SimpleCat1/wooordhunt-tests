@@ -1,5 +1,6 @@
 package com.simbirsoft.Page;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.simbirsoft.data.TestData;
 import io.qameta.allure.Step;
@@ -28,6 +29,10 @@ public class PageWooordhunt {
     private String listArea = "//div/span[text()='%s']";
     private SelenideElement logout = $("a[href='/user/prelogout']");
     private SelenideElement logoutButton = $(".base_button.green_button");
+    private SelenideElement exercisesTab = $("#menu_box a[href='/page/view/ex']");
+    private SelenideElement differentTab = $("#menu_box a[href='/page/view/extensions']");
+    private SelenideElement headingExercisesTab = $(".help_page h1");
+    private SelenideElement headingDifferentTab = $(".help_page h1");
 
     @Step("Наводит на элемент {locator} и вводим текст {value}")
     private void insertTextInArea(SelenideElement locator, String value) {
@@ -72,6 +77,12 @@ public class PageWooordhunt {
     public void clickOnPersonalAccount() {
         clickOnElement(personalAccount);
     }
+    public void clickOnExercisesTab() {
+        clickOnElement(exercisesTab);
+    }
+    public void clickOnDifferentTab() {
+        clickOnElement(differentTab);
+    }
 
     public void clickOnLogout() {
         clickOnElement(logout);
@@ -79,6 +90,7 @@ public class PageWooordhunt {
 
     public void clickOnLogoutButton() {
         clickOnElement(logoutButton);
+
     }
 
     public void clickOnLogInToTheSite() {
@@ -128,5 +140,11 @@ public class PageWooordhunt {
 
     public void assertTextInFirstElementListArea() {
         checkText($x(String.format(listArea, testData.textTheSearchWord)), testData.textTheSearchWord);
+    }
+    public void assertTextInExercisesTab() {
+        checkText( headingExercisesTab, testData.textInHeadingExercisesTab);
+    }
+    public void assertTextInDifferentTab() {
+        checkText(headingDifferentTab, testData.textInHeadingDifferentTab);
     }
 }

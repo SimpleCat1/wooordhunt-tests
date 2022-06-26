@@ -1,6 +1,7 @@
 package com.simbirsoft.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.simbirsoft.config.CredentialsConfig;
 import com.simbirsoft.helper.Attach;
@@ -21,16 +22,16 @@ public class TestBase {
 
         Configuration.startMaximized = true;
 
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-
-        Configuration.browserCapabilities = capabilities;
-        Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub/",
-                credentials.login1(),
-                credentials.password1());
+//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+//
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability("enableVNC", true);
+//        capabilities.setCapability("enableVideo", true);
+//
+//        Configuration.browserCapabilities = capabilities;
+//        Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub/",
+//                credentials.login1(),
+//                credentials.password1());
     }
 
 
@@ -40,5 +41,7 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+        Selenide.clearBrowserCookies();
+        Selenide.clearBrowserLocalStorage();
     }
 }

@@ -20,4 +20,6 @@ public class TestData {
     public String textAreaHeaderSupport = "Справочная информация";
     public String textTheSearchWord = new Faker().animal().name();
     public String[] textTheSearchTwoWord = new String[]{new Faker().animal().name(), new Faker().animal().name()};
+    public String textInHeadingExercisesTab = "Упражнения для запоминания английских слов";
+    public String textInHeadingDifferentTab = "Дополнительные материалы";
 }
