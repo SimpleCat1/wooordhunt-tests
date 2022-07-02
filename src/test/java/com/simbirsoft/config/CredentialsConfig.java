@@ -9,4 +9,5 @@ public interface CredentialsConfig extends Config {
     String login1();
     String password1();
     String remote();
+    String remoteUrl();
 }
