@@ -19,7 +19,7 @@ public class TestBase {
     @BeforeEach
     public void helperDriver() {
 //        Configuration.browser = "firefox";
-        Configuration.browser = System.getProperty("browser","chrome");
+//        Configuration.browser = System.getProperty("browser","chrome");
 
         Configuration.startMaximized = true;
 
