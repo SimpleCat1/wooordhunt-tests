@@ -18,7 +18,8 @@ public class TestBase {
 
     @BeforeEach
     public void helperDriver() {
-//        Configuration.browser = "Firefox";
+//        Configuration.browser = "firefox";
+        Configuration.browser = System.getProperty("browser","chrome");
 
         Configuration.startMaximized = true;
 
@@ -29,10 +30,11 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
+        if(String.format(credentials.remote()).equals("yes")){
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub/",
                 credentials.login1(),
-                credentials.password1());
+                credentials.password1());}
     }
 
 

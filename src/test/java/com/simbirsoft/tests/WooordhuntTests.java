@@ -95,57 +95,57 @@ public class WooordhuntTests extends TestBase {
         page.clickOnLogoutButton();
     }
 
-    @ResourceLock("SelenideConfig")
-    @Feature("История слов")
-    @Story("Запоминаем слово , которые искали в строке поиска")
-    @Owner("SimplePerson")
-    @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Появляется слово в истории")
-    @Description("Появляется слово в истории")
-    @Tag("properties")
-    @Test
-    public void theWordSearchHistoryAppears() {
-        open(pageData.urlSite);
-        page.clickOnPersonalAccount();
-        page.clickOnLogInToTheSite();
-        page.insertTextInEmail(pageData.login);
-        page.insertTextInPassword(pageData.password);
-        page.clickOnCheckboxRememberMe();
-        page.clickOnButtonEnter();
-        page.insertTextInSearch();
-        page.clickOnSearchButton();
-        page.clickOnHomeTab();
-        page.assertTextInHistory();
-        page.clickOnPersonalAccount();
-        page.clickOnLogout();
-        page.clickOnLogoutButton();
-    }
-
-    @ResourceLock("SelenideConfig")
-    @Feature("История слов")
-    @Story("Запоминаем слова , которые искали в строке поиска, последовательно")
-    @Owner("SimplePerson")
-    @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Появляется слова в истории, последовательно")
-    @Description("Появляется слова в истории, последовательно")
-    @Tag("properties")
-    @Test
-    public void theWordsSearchHistoryAppears() {
-        open(pageData.urlSite);
-        page.clickOnPersonalAccount();
-        page.clickOnLogInToTheSite();
-        page.insertTextInEmail(pageData.login);
-        page.insertTextInPassword(pageData.password);
-        page.clickOnCheckboxRememberMe();
-        page.clickOnButtonEnter();
-        page.insertTwoTextInSearch();
-        page.clickOnHomeTab();
-        page.assertTextsInHistory();
-
-        page.clickOnPersonalAccount();
-        page.clickOnLogout();
-        page.clickOnLogoutButton();
-    }
+//    @ResourceLock("SelenideConfig")
+//    @Feature("История слов")
+//    @Story("Запоминаем слово , которые искали в строке поиска")
+//    @Owner("SimplePerson")
+//    @Severity(SeverityLevel.CRITICAL)
+//    @DisplayName("Появляется слово в истории")
+//    @Description("Появляется слово в истории")
+//    @Tag("properties")
+//    @Test
+//    public void theWordSearchHistoryAppears() {
+//        open(pageData.urlSite);
+//        page.clickOnPersonalAccount();
+//        page.clickOnLogInToTheSite();
+//        page.insertTextInEmail(pageData.login);
+//        page.insertTextInPassword(pageData.password);
+//        page.clickOnCheckboxRememberMe();
+//        page.clickOnButtonEnter();
+//        page.insertTextInSearch();
+//        page.clickOnSearchButton();
+//        page.clickOnHomeTab();
+//        page.assertTextInHistory();
+//        page.clickOnPersonalAccount();
+//        page.clickOnLogout();
+//        page.clickOnLogoutButton();
+//    }
+//
+//    @ResourceLock("SelenideConfig")
+//    @Feature("История слов")
+//    @Story("Запоминаем слова , которые искали в строке поиска, последовательно")
+//    @Owner("SimplePerson")
+//    @Severity(SeverityLevel.CRITICAL)
+//    @DisplayName("Появляется слова в истории, последовательно")
+//    @Description("Появляется слова в истории, последовательно")
+//    @Tag("properties")
+//    @Test
+//    public void theWordsSearchHistoryAppears() {
+//        open(pageData.urlSite);
+//        page.clickOnPersonalAccount();
+//        page.clickOnLogInToTheSite();
+//        page.insertTextInEmail(pageData.login);
+//        page.insertTextInPassword(pageData.password);
+//        page.clickOnCheckboxRememberMe();
+//        page.clickOnButtonEnter();
+//        page.insertTwoTextInSearch();
+//        page.clickOnHomeTab();
+//        page.assertTextsInHistory();
+//
+//        page.clickOnPersonalAccount();
+//        page.clickOnLogout();
+//        page.clickOnLogoutButton();
+//    }
 
     @Feature("Вкладки на странице")
     @Story("Вкладка Упаржнение работает")
