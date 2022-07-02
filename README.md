@@ -127,7 +127,9 @@ allure serve build/allure-results
 *После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появится
 значок <img width="2%" title="Allure Report" src="images/daramirra_allure-Report-logo.svg"><code><strong>*Allure
 Report*</strong></code>, кликнув по которому, откроется страница с сформированным html-отчетом.*
-
+<p align="center">
+  <img src="images/firefox_RtUJnFzfsL.jpg" alt="job" width="800">
+</p>
 
 ## <img width="4%" title="Allure Report" src="images/daramirra_allure-Report-logo.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/C07-daramirra-diploma/8/allure/)
 
@@ -144,7 +146,7 @@ Report*</strong></code>, кликнув по которому, откроетс�
 >- [x] <code><strong>*EXECUTORS*</strong></code> - отображает исполнителя текущей сборки (ссылка на сборку в Jenkins)
 
 <p align="center">
-  <img src="images/firefox_RtUJnFzfsL.jpg" alt="Allure Report" width="900">
+  <img src="images/firefox_ERyash2mhg.jpg" alt="Allure Report" width="900">
 </p>
 
 ### :pushpin: Список тестов c описанием шагов и визуализацией результатов
