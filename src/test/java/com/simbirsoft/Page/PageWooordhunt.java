@@ -1,6 +1,5 @@
 package com.simbirsoft.Page;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.simbirsoft.data.TestData;
 import io.qameta.allure.Step;
@@ -38,14 +37,17 @@ public class PageWooordhunt {
     private void insertTextInArea(SelenideElement locator, String value) {
         locator.setValue(value);
     }
+
     @Step("Нажимаем на элемент {locator}")
     private void clickOnElement(SelenideElement locator) {
         locator.click();
     }
+
     @Step("Наводит на элемент {locator} и проверяем наличие текста {text}")
-    public void checkText(SelenideElement locator, String text){
+    public void checkText(SelenideElement locator, String text) {
         assertText(locator, text);
     }
+
     //нужно было добавить step, так как он тут вставлял секретный пароль и логин и указывал в отчете allure ,
     // а так не указывает.Ну и еще сделал его отедльно,чтобы другие элементы попадали в отчет allure
     @Step("Логин")
@@ -77,9 +79,11 @@ public class PageWooordhunt {
     public void clickOnPersonalAccount() {
         clickOnElement(personalAccount);
     }
+
     public void clickOnExercisesTab() {
         clickOnElement(exercisesTab);
     }
+
     public void clickOnDifferentTab() {
         clickOnElement(differentTab);
     }
@@ -116,6 +120,7 @@ public class PageWooordhunt {
     private void assertText(SelenideElement locator, String text) {
         locator.shouldHave(text(text));
     }
+
     public void assertTextOneBlockAfterAuthorization() {
         checkText(textAreaOneAfterAuthorization, testData.textAreaOneAuthorization);
     }
@@ -141,9 +146,11 @@ public class PageWooordhunt {
     public void assertTextInFirstElementListArea() {
         checkText($x(String.format(listArea, testData.textTheSearchWord)), testData.textTheSearchWord);
     }
+
     public void assertTextInExercisesTab() {
-        checkText( headingExercisesTab, testData.textInHeadingExercisesTab);
+        checkText(headingExercisesTab, testData.textInHeadingExercisesTab);
     }
+
     public void assertTextInDifferentTab() {
         checkText(headingDifferentTab, testData.textInHeadingDifferentTab);
     }
