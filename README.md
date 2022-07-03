@@ -158,7 +158,7 @@ Report*</strong></code>, кликнув по которому, откроетс�
   <img src="images/firefox_Wz33ODDtPH.jpg" alt="Allure Report" width="900">
 </p>
 
-## <img width="4%" title="Allure TestOPS" src="images/picture_allure-ee-logo.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/651/dashboards)
+## <img width="4%" title="Allure TestOPS" src="images/picture_allure-ee-logo.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/1399/dashboards)
 
 ### :pushpin: Основной дашборд
 
@@ -178,7 +178,7 @@ Report*</strong></code>, кликнув по которому, откроетс�
   <img src="images/firefox_ErB32sYEfR.jpg" alt="test cases" width="900">
 </p>
 
-## <img width="4%" title="Jira" src="images/picture_jira-logo.svg"> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-269)
+## <img width="4%" title="Jira" src="images/picture_jira-logo.svg"> Интеграция с [Jira](https://jira.autotests.cloud/browse/AUTO-1138)
 
 <p align="center">
   <img src="images/firefox_dzL4efc9xE.jpg" alt="jira" width="1000">
