@@ -1,7 +1,7 @@
 <p align="right">
-<a href="https://visitor-badge-reloaded.herokuapp.com/badge?page_id=daramirra.qaGuruDiploma&color=55acb7&style=flat&logo=Github&text=Hello_Visitors!">
-  <img title="|Customized by daramirra|" src="https://visitor-badge-reloaded.herokuapp.com/badge?page_id=daramirra.qaGuruDiploma&color=55acb7&style=flat&logo=Github&text=Hello_Visitors!"/>
-  <img title="|Customized by daramirra|" alt="GitHub watchers" src="https://img.shields.io/github/watchers/daramirra/qaGuruDiploma?color=55acb7&logo=github">
+<a href="https://visitor-badge-reloaded.herokuapp.com/badge?page_id=SimpleCat1.qaGuruDiploma&color=55acb7&style=flat&logo=Github&text=Hello_Visitors!">
+  <img title="|Customized by SimpleCat1|" src="https://visitor-badge-reloaded.herokuapp.com/badge?page_id=SimpleCat1.qaGuruDiploma&color=55acb7&style=flat&logo=Github&text=Hello_Visitors!"/>
+  <img title="|Customized by SimpleCat1|" alt="GitHub watchers" src="https://img.shields.io/github/watchers/SimpleCat1/qaGuruDiploma?color=55acb7&logo=github">
 </a>
 </p>
 
@@ -10,18 +10,18 @@
 
 ## :rocket: Технологии и инструменты (наведите на картинку курсовром, чтобы прочитать название)
 
-<p  align="center"><code><img width="5%" title="IntelliJ IDEA" src="images/daramirra_IDEA-logo.svg"></code>
-<code><img width="5%" title="Java" src="images/daramirra_java-logo.svg"></code>
-<code><img width="5%" title="Selenide" src="images/daramirra_selenide-logo.svg"></code>
-<code><img width="5%" title="Selenoid" src="images/daramirra_selenoid-logo.svg"></code>
-<code><img width="5%" title="Gradle" src="images/daramirra_gradle-logo.svg "></code>
-<code><img width="5%" title="JUnit5" src="images/daramirra_junit5-logo.svg"></code>
-<code><img width="5%" title="Allure Report" src="images/daramirra_allure-Report-logo.svg"></code>
-<code><img width="5%" title="Allure TestOps" src="images/daramirra_allure-ee-logo.svg"></code>
-<code><img width="5%" title="Github" src="images/daramirra_git-logo.svg"></code>
-<code><img width="5%" title="Jenkins" src="images/daramirra_jenkins-logo.svg"></code>
-<code><img width="5%" title="Jira" src="images/daramirra_jira-logo.svg"></code>
-<code><img width="5%" title="Telegram" src="images/daramirra_Telegram.svg"></code></p>
+<p  align="center"><code><img width="5%" title="IntelliJ IDEA" src="images/picture_IDEA-logo.svg"></code>
+<code><img width="5%" title="Java" src="images/picture_java-logo.svg"></code>
+<code><img width="5%" title="Selenide" src="images/picture_selenide-logo.svg"></code>
+<code><img width="5%" title="Selenoid" src="images/picture_selenoid-logo.svg"></code>
+<code><img width="5%" title="Gradle" src="images/picture_gradle-logo.svg "></code>
+<code><img width="5%" title="JUnit5" src="images/picture_junit5-logo.svg"></code>
+<code><img width="5%" title="Allure Report" src="images/picture_allure-Report-logo.svg"></code>
+<code><img width="5%" title="Allure TestOps" src="images/picture_allure-ee-logo.svg"></code>
+<code><img width="5%" title="Github" src="images/picture_git-logo.svg"></code>
+<code><img width="5%" title="Jenkins" src="images/picture_jenkins-logo.svg"></code>
+<code><img width="5%" title="Jira" src="images/picture_jira-logo.svg"></code>
+<code><img width="5%" title="Telegram" src="images/picture_Telegram.svg"></code></p>
 Кратко опишу ,что в проекте реализовано: 
 
 Код написан на `Java` в нем использовался,
@@ -108,7 +108,7 @@ gradle clean test -Dthreads=[threadsValue]
 allure serve build/allure-results
 ```
 
-## <img width="4%" title="Jenkins" src="images/daramirra_jenkins-logo.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/C07-daramirra-diploma/)
+## <img width="4%" title="Jenkins" src="images/picture_jenkins-logo.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/08-otretykova-web/)
 
 ### :pushpin: Параметры сборки
 
@@ -125,13 +125,13 @@ allure serve build/allure-results
 </p>
 
 *После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появится
-значок <img width="2%" title="Allure Report" src="images/daramirra_allure-Report-logo.svg"><code><strong>*Allure
+значок <img width="2%" title="Allure Report" src="images/picture_allure-Report-logo.svg"><code><strong>*Allure
 Report*</strong></code>, кликнув по которому, откроется страница с сформированным html-отчетом.*
 <p align="center">
   <img src="images/firefox_RtUJnFzfsL.jpg" alt="job" width="800">
 </p>
 
-## <img width="4%" title="Allure Report" src="images/daramirra_allure-Report-logo.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/C07-daramirra-diploma/8/allure/)
+## <img width="4%" title="Allure Report" src="images/picture_allure-Report-logo.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/08-otretykova-web/allure/)
 
 ### :pushpin: Общая информация
 
@@ -158,7 +158,7 @@ Report*</strong></code>, кликнув по которому, откроетс�
   <img src="images/firefox_Wz33ODDtPH.jpg" alt="Allure Report" width="900">
 </p>
 
-## <img width="4%" title="Allure TestOPS" src="images/daramirra_allure-ee-logo.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/651/dashboards)
+## <img width="4%" title="Allure TestOPS" src="images/picture_allure-ee-logo.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/651/dashboards)
 
 ### :pushpin: Основной дашборд
 
@@ -178,19 +178,19 @@ Report*</strong></code>, кликнув по которому, откроетс�
   <img src="images/firefox_ErB32sYEfR.jpg" alt="test cases" width="900">
 </p>
 
-## <img width="4%" title="Jira" src="images/daramirra_jira-logo.svg"> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-269)
+## <img width="4%" title="Jira" src="images/picture_jira-logo.svg"> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-269)
 
 <p align="center">
   <img src="images/firefox_dzL4efc9xE.jpg" alt="jira" width="1000">
 </p>
 
-## <img width="4%" title="Selenoid" src="images/daramirra_selenoid-logo.svg"> Пример запуска теста в Selenoid
+## <img width="4%" title="Selenoid" src="images/picture_selenoid-logo.svg"> Пример запуска теста в Selenoid
 
 <p align="center">
   <img src="images/583391e0a8a517d2419bcf43088a2c95.gif" alt="video" width="1000">
 </p>
 
-## <img width="4%" title="Telegram" src="images/daramirra_Telegram.svg"> Уведомления в Telegram
+## <img width="4%" title="Telegram" src="images/picture_Telegram.svg"> Уведомления в Telegram
 
 <p align="center">
   <img src="images/Telegram_ICW6JWi03W.jpg" alt="Telegram" width="390">
