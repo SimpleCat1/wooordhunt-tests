@@ -1,8 +1,9 @@
 package com.simbirsoft.tests;
 
-import com.simbirsoft.Page.PageWooordhunt;
+import com.simbirsoft.page.WordSearchWooordhunt;
 import com.simbirsoft.data.TestData;
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -16,69 +17,21 @@ import org.junit.jupiter.api.parallel.ResourceLock;
 import static com.codeborne.selenide.Selenide.open;
 
 
-public class WooordhuntTests extends TestBase {
-    PageWooordhunt page = new PageWooordhunt();
+public class WordSearchWooordhuntTests extends TestBase {
+    WordSearchWooordhunt page = new WordSearchWooordhunt();
     TestData pageData = new TestData();
 
     @ResourceLock("SelenideConfig")
-    @Feature("Авторизация")
-    @Story("Авторизация")
-    @Owner("SimplePerson")
-    @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Авторизация на сайте")
-    @Description("авторизация на сайте")
-    @Tag("properties")
-    @Test
-    public void authorizationOnTheWebsite() {
-        open(pageData.urlSite);
-        page.clickOnPersonalAccount();
-        page.clickOnLogInToTheSite();
-        page.insertTextInEmail(pageData.login);
-        page.insertTextInPassword(pageData.password);
-        page.clickOnCheckboxRememberMe();
-        page.clickOnButtonEnter();
-        page.assertTextOneBlockAfterAuthorization();
-        page.assertTextTwoBlockAfterAuthorization();
-        page.clickOnPersonalAccount();
-        page.clickOnLogout();
-        page.clickOnLogoutButton();
-    }
-
-    @ResourceLock("SelenideConfig")
-    @Feature("Справка")
-    @Story("Справка на сайте")
-    @Owner("SimplePerson")
-    @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Справка на сайте")
-    @Description("Справка на сайте, после авторизации")
-    @Tag("properties")
-    @Test
-    public void theHelpOnTheMainPageIsWorking() {
-        open(pageData.urlSite);
-        page.clickOnPersonalAccount();
-        page.clickOnLogInToTheSite();
-        page.insertTextInEmail(pageData.login);
-        page.insertTextInPassword(pageData.password);
-        page.clickOnCheckboxRememberMe();
-        page.clickOnButtonEnter();
-        page.clickOnTheSupport();
-        page.assertTextOneBlockTheSupportPage();
-
-        page.clickOnPersonalAccount();
-        page.clickOnLogout();
-        page.clickOnLogoutButton();
-    }
-
-    @ResourceLock("SelenideConfig")
+    @Epic("Авторизованный пользователь")
     @Feature("Поле поиска слов")
     @Story("Релевантность поиска слов")
     @Owner("SimplePerson")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Лист слов в строке поиска")
-    @Description("проверяем ,что в первую позицию попадают слова релевантного значения")
+    @Description("Проверяем ,что в первую позицию попадают слова релевантного значения")
     @Tag("properties")
     @Test
-    public void theWordSearchListAreaAppears() {
+    public void checkingTheRelevanceOfAWordSearch() {
         open(pageData.urlSite);
         page.clickOnPersonalAccount();
         page.clickOnLogInToTheSite();
@@ -87,6 +40,7 @@ public class WooordhuntTests extends TestBase {
         page.clickOnCheckboxRememberMe();
         page.clickOnButtonEnter();
         page.insertTextInSearch();
+
         page.assertTextInFirstElementListArea();
 
         page.clickOnPersonalAccount();
@@ -95,6 +49,7 @@ public class WooordhuntTests extends TestBase {
     }
 
     @ResourceLock("SelenideConfig")
+    @Epic("Авторизованный пользователь")
     @Feature("История слов")
     @Story("Запоминаем слово , которые искали в строке поиска")
     @Owner("SimplePerson")
@@ -103,7 +58,7 @@ public class WooordhuntTests extends TestBase {
     @Description("Появляется слово в истории")
     @Tag("properties")
     @Test
-    public void theWordSearchHistoryAppears() {
+    public void checkingTheWordSearchHistory() {
         open(pageData.urlSite);
         page.clickOnPersonalAccount();
         page.clickOnLogInToTheSite();
@@ -114,13 +69,16 @@ public class WooordhuntTests extends TestBase {
         page.insertTextInSearch();
         page.clickOnSearchButton();
         page.clickOnHomeTab();
+
         page.assertTextInHistory();
+
         page.clickOnPersonalAccount();
         page.clickOnLogout();
         page.clickOnLogoutButton();
     }
 
     @ResourceLock("SelenideConfig")
+    @Epic("Авторизованный пользователь")
     @Feature("История слов")
     @Story("Запоминаем слова , которые искали в строке поиска, последовательно")
     @Owner("SimplePerson")
@@ -129,7 +87,7 @@ public class WooordhuntTests extends TestBase {
     @Description("Появляется слова в истории, последовательно")
     @Tag("properties")
     @Test
-    public void theWordsSearchHistoryAppears() {
+    public void checkingTheSequenceOfTheWordSearchHistory() {
         open(pageData.urlSite);
         page.clickOnPersonalAccount();
         page.clickOnLogInToTheSite();
@@ -139,38 +97,11 @@ public class WooordhuntTests extends TestBase {
         page.clickOnButtonEnter();
         page.insertTwoTextInSearch();
         page.clickOnHomeTab();
+
         page.assertTextsInHistory();
 
         page.clickOnPersonalAccount();
         page.clickOnLogout();
         page.clickOnLogoutButton();
-    }
-
-    @Feature("Вкладки на странице")
-    @Story("Вкладка Упаржнение работает")
-    @Owner("SimplePerson")
-    @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Вкладка упражнение")
-    @Description("Нажимаем на вкладку упражнение и проверяем заголовок")
-    @Tag("properties")
-    @Test
-    public void thereAreExercisesOnThePage() {
-        open(pageData.urlSite);
-        page.clickOnExercisesTab();
-        page.assertTextInExercisesTab();
-    }
-
-    @Feature("Вкладки на странице")
-    @Story("Вкладка разное работает")
-    @Owner("SimplePerson")
-    @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Вкладка разное")
-    @Description("Переходим на вкладку разное и проверяем заголовок")
-    @Tag("properties")
-    @Test
-    public void thereAreDifferentOnThePage() {
-        open(pageData.urlSite);
-        page.clickOnDifferentTab();
-        page.assertTextInDifferentTab();
     }
 }
