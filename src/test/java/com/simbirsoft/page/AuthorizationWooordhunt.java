@@ -20,8 +20,6 @@ public class AuthorizationWooordhunt extends PageWooordhunt {
     private SelenideElement logout = $("a[href='/user/prelogout']");
     private SelenideElement logoutButton = $(".base_button.green_button");
 
-    //нужно было добавить step, так как он тут вставлял секретный пароль и логин и указывал в отчете allure ,
-    // а так не указывает.Ну и еще сделал его отедльно,чтобы другие элементы попадали в отчет allure
     @Step("Ввод логина в input login")
     public void insertTextInEmail(String value) {
         inputEmail.setValue(value);
