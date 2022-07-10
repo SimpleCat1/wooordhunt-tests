@@ -20,8 +20,8 @@ public class HeaderWooordHuntTests extends TestBase {
     TestData pageData = new TestData();
 
     @Epic("Неавторизованный пользователь")
-    @Feature("Вкладки на странице")
-    @Story("Вкладка Упражнение работает")
+    @Feature("Вкладки на странице (Header)")
+    @Story("Вкладка Упражнение")
     @Owner("SimplePerson")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Вкладка упражнение")
@@ -36,8 +36,8 @@ public class HeaderWooordHuntTests extends TestBase {
     }
 
     @Epic("Неавторизованный пользователь")
-    @Feature("Вкладки на странице")
-    @Story("Вкладка разное работает")
+    @Feature("Вкладки на странице (Header)")
+    @Story("Вкладка разное")
     @Owner("SimplePerson")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Вкладка разное")

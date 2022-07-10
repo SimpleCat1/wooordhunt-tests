@@ -22,11 +22,11 @@ public class FooterWooordHuntTests extends TestBase {
 
     @ResourceLock("SelenideConfig")
     @Epic("Авторизованный пользователь")
-    @Feature("Справка")
+    @Feature("Вкладки на странице (Footer)")
     @Story("Справка на сайте")
     @Owner("SimplePerson")
     @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Справка на сайте")
+    @DisplayName("Вкладка справка")
     @Description("Справка на сайте, после авторизации")
     @Tag("properties")
     @Test

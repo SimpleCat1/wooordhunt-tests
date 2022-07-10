@@ -27,7 +27,7 @@ public class AuthorizationWooordHuntTests extends TestBase {
     @Owner("SimplePerson")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Авторизация на сайте")
-    @Description("Авторизация на сайте")
+    @Description("Авторизация на сайте существующего пользователя")
     @Tag("properties")
     @Test
     public void authorizationOnTheWebsite() {

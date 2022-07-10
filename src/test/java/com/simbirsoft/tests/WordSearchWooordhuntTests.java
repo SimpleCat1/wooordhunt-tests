@@ -27,8 +27,8 @@ public class WordSearchWooordhuntTests extends TestBase {
     @Story("Релевантность поиска слов")
     @Owner("SimplePerson")
     @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Лист слов в строке поиска")
-    @Description("Проверяем ,что в первую позицию попадают слова релевантного значения")
+    @DisplayName("Релевантное, первое значение листа слов в строке поиска")
+    @Description("Проверяем, что в первую позицию попадают слова релевантного значения")
     @Tag("properties")
     @Test
     public void checkingTheRelevanceOfAWordSearch() {
@@ -51,11 +51,11 @@ public class WordSearchWooordhuntTests extends TestBase {
     @ResourceLock("SelenideConfig")
     @Epic("Авторизованный пользователь")
     @Feature("История слов")
-    @Story("Запоминаем слово , которые искали в строке поиска")
+    @Story("'История слов' запоминает слова, которые искали в строке поиска")
     @Owner("SimplePerson")
     @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Появляется слово в истории")
-    @Description("Появляется слово в истории")
+    @DisplayName("Появляется слово в 'Истории слов'")
+    @Description("В 'Истории слов' появилось слово")
     @Tag("properties")
     @Test
     public void checkingTheWordSearchHistory() {
@@ -80,11 +80,11 @@ public class WordSearchWooordhuntTests extends TestBase {
     @ResourceLock("SelenideConfig")
     @Epic("Авторизованный пользователь")
     @Feature("История слов")
-    @Story("Запоминаем слова , которые искали в строке поиска, последовательно")
+    @Story("'История слов' запоминает слова, которые искали в строке поиска, последовательно")
     @Owner("SimplePerson")
     @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Появляется слова в истории, последовательно")
-    @Description("Появляется слова в истории, последовательно")
+    @DisplayName("Появляются слова в 'Истории слов', последовательно")
+    @Description("В 'Истории слов' появились слова, последовательно")
     @Tag("properties")
     @Test
     public void checkingTheSequenceOfTheWordSearchHistory() {
